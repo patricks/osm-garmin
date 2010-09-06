@@ -136,8 +136,12 @@ function build_device_file()
 	echo "Building device file..."
 	cd $STDMAPDIR/build
 
+	if [ ! -d $STDMAPDIR/dist/$CDATE ]; then
+		mkdir $STDMAPDIR/dist/$CDATE
+	fi
+
 	if [ ! -d $STDMAPDIR/dist/$CDATE/$MAPTYPE ]; then
-		mkdir $STDMAPDIR/dist/$CDATE/$MAPTYPE/
+		mkdir $STDMAPDIR/dist/$CDATE/$MAPTYPE
 	fi
 
 	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY.img
@@ -223,8 +227,8 @@ fi
 
 build_directories
 check_apps
-split_map
-build_map
+#split_map
+#build_map
 build_device_file
 
 echo "Build process finish at: `date`"

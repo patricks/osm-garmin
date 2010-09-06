@@ -1,0 +1,24 @@
+style-file: ../styles/outdoorstyle
+description: 'Openstreetmap Austria 12.07.2010'
+country-name: Austria
+country-abbr: AT
+product-id: 45
+series-name: OSM-Outdoor-Austria
+overview-name: OSM-Outdoor
+family-name: OSM-Outdoor
+family-id: 4
+area-name: Austria
+mapname: 63240370
+draw-priority: 25
+add-pois-to-areas
+make-all-cycleways
+link-pois-to-ways
+remove-short-arcs
+latin1
+net
+route
+tdbfile
+gmapsupp
+max-jobs
+verbose
+

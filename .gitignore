@@ -6,3 +6,5 @@ osm-data-tmp/
 mkgmap/splitter-svn/
 mkgmap/mkgmap-svn/
 osm-map-std/
+osm-map-outdoor/build/
+osm-map-outdoor/dist/
