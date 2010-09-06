@@ -1,2 +1,3 @@
 .DS_Store
 osm-data/*.osm
+conf/*.conf
