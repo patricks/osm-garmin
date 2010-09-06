@@ -227,8 +227,8 @@ fi
 
 build_directories
 check_apps
-#split_map
-#build_map
+split_map
+build_map
 build_device_file
 
 echo "Build process finish at: `date`"
