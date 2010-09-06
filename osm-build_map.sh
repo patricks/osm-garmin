@@ -46,6 +46,28 @@ CDATE=`date "+%G%m%d"`
 
 CWD=`pwd`
 
+# check for core applications
+function check_apps()
+{
+	# java
+	if [ ! -x /usr/bin/java ]; then
+		echo "ERROR: java not found."
+		exit -1
+	fi
+
+	# mkgmap splitter
+	if [ ! -f $SPLITTERBIN ]; then
+		echo "ERROR: mkgmap splitter not found."
+		exit -1
+	fi
+
+	# mkgmap
+	if [ ! -f $MKGMAPBIN ]; then
+		echo "ERROR: mkgmap not found."
+		exit -1
+	fi
+}
+
 # build core directories
 function build_directories()
 {
@@ -198,6 +220,7 @@ if [ ! -f "$OSMDATA" ]; then
 fi
 
 build_directories
+check_apps
 split_map
 build_map
 build_device_file

@@ -1,3 +1,5 @@
 .DS_Store
 osm-data/*.osm
 conf/*.conf
+osm-data-cache/
+osm-data-tmp/
