@@ -3,3 +3,5 @@ osm-data/*.osm
 conf/*.conf
 osm-data-cache/
 osm-data-tmp/
+mkgmap/splitter-svn/
+mkgmap/mkgmap-svn/
