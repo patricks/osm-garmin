@@ -1,7 +1,7 @@
 #!/bin/sh
 ###############################################################################
 #                                                                             #
-# builds osm map for garmin devices                                           #
+# builds an osm map for garmin devices                                        #
 #                                                                             #
 # @version: 1.11                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
@@ -121,11 +121,13 @@ function build_map()
 	# check if options file is available
 	if [ -f ../options.args.$COUNTRY ];then
 		echo "INFO: using options.args.$COUNTRY"
+
+		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.gz $TYPFILE
 	else
 		echo "INFO: options.args.$COUNTRY not found"
-	fi
 
-	java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.gz $TYPFILE
+		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs --gmapsupp $OSMDATATMP/*.osm.gz $TYPFILE
+	fi
 }
 
 # build a single garmin img file for the device
@@ -134,11 +136,11 @@ function build_device_file()
 	echo "Building device file..."
 	cd $STDMAPDIR/build
 
-	if [ ! -d $STDMAPDIR/dist/$CDATE ]; then
-		mkdir $STDMAPDIR/dist/$CDATE
+	if [ ! -d $STDMAPDIR/dist/$CDATE/$MAPTYPE ]; then
+		mkdir $STDMAPDIR/dist/$CDATE/$MAPTYPE/
 	fi
 
-	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/gmapsupp_$COUNTRY.img
+	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY.img
 }
 
 # updates osm data
