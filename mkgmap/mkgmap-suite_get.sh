@@ -1,7 +1,7 @@
 #!/bin/sh
 ###############################################################################
 #                                                                             #
-# download the latest mkgmap svn version                                      #
+# download and build the latest mkgmap svn version                            #
 #                                                                             #
 # @version: 1.00                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #

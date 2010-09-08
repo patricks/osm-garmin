@@ -150,13 +150,13 @@ function update_osm_data()
 function usage()
 {
 	cat << EOF
-usage: $0 options country
+usage: $0 options
 
 OPTIONS:
-	-c	Define the country
-	-d	Download osm data
-	-t	Select the map type
-	-h	Show this message
+	-c <country>	Define the country
+	-d		Download osm data
+	-t <map type>	Select the map type
+	-h		Show this message
 
 EOF
 }
