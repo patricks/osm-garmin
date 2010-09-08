@@ -13,30 +13,8 @@
 
 # ./osm-build_map.sh -c austria -t outdoor
 
-# read the config from a seperate file
-if [ -r conf/machine.conf ]; then
-	. conf/machine.conf
-else
-	echo "ERROR: no machine config file found."
-	exit -1
-fi
-
-# osm data directory
-OSMDATADIR="$OSMGARMINDIR/osm-data"
-
-# osm data download script
-OSMDATASCRIPT="$OSMDATADIR/osm-get_data.sh"
-
-# tmp build patch
-OSMDATATMP="$OSMGARMINDIR/osm-data-tmp"
-
-# cache directory
-OSMDATACACHE="$OSMGARMINDIR/osm-data-cache"
-
 # current date
 CDATE=`date "+%G%m%d"`
-
-###############################################################################
 
 CWD=`pwd`
 
@@ -161,7 +139,9 @@ OPTIONS:
 EOF
 }
 
-echo "Starting build process at: `date`"
+###############################################################################
+# MAIN                                                                        #
+###############################################################################
 
 while getopts ht:dc: OPTION
 do
@@ -186,6 +166,26 @@ do
 	esac
 done
 
+# read the config from a seperate file
+if [ -r conf/machine.conf ]; then
+	. conf/machine.conf
+else
+	echo "ERROR: no machine config file found."
+	exit -1
+fi
+
+# osm data directory
+OSMDATADIR="$OSMGARMINDIR/osm-data"
+
+# osm data download script
+OSMDATASCRIPT="$OSMDATADIR/osm-get_data.sh"
+
+# tmp build patch
+OSMDATATMP="$OSMGARMINDIR/osm-data-tmp"
+
+# cache directory
+OSMDATACACHE="$OSMGARMINDIR/osm-data-cache"
+
 if [ -z "$COUNTRY" ]; then
 	echo "Using default country (austria)"
 	COUNTRY="austria"
@@ -194,7 +194,7 @@ else
 fi
 
 if [ "$DLData" = "YES" ]; then
-		update_osm_data $COUNTRY
+	update_osm_data $COUNTRY
 fi
 
 if [ -z "$MAPTYPE" ]; then
@@ -209,13 +209,18 @@ else
 	fi
 fi
 
+# osm style type directory
 STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
+
+#osm data xml file
 OSMDATA="$OSMDATADIR/$COUNTRY.osm"
 
 if [ ! -f "$OSMDATA" ]; then
-	echo "INFO: No OSM Data file found staring download"
+	echo "INFO: No OSM Data file ($OSMDATA)found staring download"
 	update_osm_data $COUNTRY
 fi
+
+echo "Starting build process at: `date`"
 
 build_directories
 check_apps
