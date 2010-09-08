@@ -11,6 +11,16 @@
 #                                                                             #
 ###############################################################################
 
+if [ ! -x /usr/bin/curl ]; then
+	echo "ERROR: curl not found."
+	exit -1
+fi
+
+if [ ! -x /usr/bin/bunzip2 ]; then
+	echo "ERROR: bunzip2 not found."
+	exit -1
+fi
+
 if [ -z "$1" ]; then
 	echo "INFO: No country name given, using default (austria)"
 	COUNTRY="austria"
