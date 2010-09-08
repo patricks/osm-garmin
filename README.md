@@ -21,4 +21,5 @@ for a map with the outdoor style run:
 `./osm-build_map.sh -c austria -t outdoor`
 
 for more help run:
+
 `./osm-build_map.sh -h`
