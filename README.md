@@ -14,8 +14,11 @@ Usage
 
 for a standard map without anything special simple run:
 
-./osm-build_map.sh
+`./osm-build_map.sh`
 
-for a outdoor map run:
+for a map with the outdoor style run:
 
-./osm-build_map.sh -c austria -t outdoor
+`./osm-build_map.sh -c austria -t outdoor`
+
+for more help run:
+`./osm-build_map.sh -h`
