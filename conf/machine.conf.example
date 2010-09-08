@@ -1,2 +1,11 @@
+# memory
 UMEM=2048
+
+# path where this script is placed
 OSMGARMINDIR="/Users/foobar/osm-garmin"
+
+# splitter binary
+SPLITTERBIN="$OSMGARMINDIR/mkgmap/splitter-svn/dist/splitter.jar"
+
+# mkgmap binary
+MKGMAPBIN="$OSMGARMINDIR/mkgmap/mkgmap-svn/dist/mkgmap.jar"

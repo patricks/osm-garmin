@@ -4,8 +4,7 @@ installation:
 -------------
 
 - create a .conf file in the conf directory (copy and motify the .example file)
-- get mkgmap and mkgmap splitter jars or build it via mkgmap-suite_get.sh script
-- set the correct mkgmap and splitter path
+- [optional] get mkgmap and mkgmap splitter jars or build it via mkgmap-suite_get.sh script
 
 usage:
 ------
