@@ -11,7 +11,7 @@
 #                                                                             #
 ###############################################################################
 
-# ./osm-build_map.sh -c austria -t outdoor
+#usage example:  ./osm-build_map.sh -c austria -t outdoor
 
 # current date
 CDATE=`date "+%G%m%d"`
@@ -91,7 +91,7 @@ function build_map()
 	fi
 
 	# check if options file is available
-	if [ -f ../options.args.$COUNTRY ];then
+	if [ -f ../options.args.$COUNTRY ]; then
 		echo "INFO: using options.args.$COUNTRY"
 		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.gz $TYPFILE
 	else
