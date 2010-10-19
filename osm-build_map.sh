@@ -92,7 +92,7 @@ function build_map()
 
 	# check if options file is available
 	if [ -f ../options.args.$COUNTRY ]; then
-		echo "INFO: using options.args.$COUNTRY"
+		echo "INFO: Using options.args.$COUNTRY"
 		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.gz $TYPFILE
 	else
 		echo "INFO: options.args.$COUNTRY not found"
@@ -170,7 +170,7 @@ done
 if [ -r conf/machine.conf ]; then
 	. conf/machine.conf
 else
-	echo "ERROR: no machine config file found."
+	echo "ERROR: No machine config file found."
 	exit -1
 fi
 

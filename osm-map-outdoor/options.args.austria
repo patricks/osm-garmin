@@ -1,10 +1,10 @@
 style-file: ../styles/outdoorstyle
-description: 'Openstreetmap Austria 12.07.2010'
+description: 'Openstreetmap Austria 19.10.2010'
 country-name: Austria
 country-abbr: AT
 product-id: 45
 series-name: OSM-Outdoor-Austria
-overview-name: OSM-Outdoor
+overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
 area-name: Austria

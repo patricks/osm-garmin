@@ -1,7 +1,7 @@
+#------------------------------------------------------------------------------
+# route
 
-#
-# You can have rules for relations.  Usually you will set tags on the
-# elements that make up the relation.
-#
-# eg. type=route route=bus { apply { set route=bus; add rn='${route_no}' ; }}
-#
+route=foot | route=hiking   { apply { add foot=yes; } }
+route=bicycle | route=mtb   { apply { add bicycle=yes; } }
+
+route=*     { apply { add route='${route}'; add route:name='${name}'; add route:ref='${ref}'; add route:network='${network}'; add route:importance='${importance}'; } }
