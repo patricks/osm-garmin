@@ -193,10 +193,6 @@ else
 	echo "Using country ($COUNTRY)"
 fi
 
-if [ "$DLData" = "YES" ]; then
-	update_osm_data $COUNTRY
-fi
-
 if [ -z "$MAPTYPE" ]; then
 	echo "Using default map type"
 	MAPTYPE="std"
@@ -207,6 +203,11 @@ else
 	else
 		echo "Using map type ($MAPTYPE)"
 	fi
+fi
+
+# download osm data if it is required
+if [ "$DLData" = "YES" ]; then
+	update_osm_data $COUNTRY
 fi
 
 # osm style type directory
