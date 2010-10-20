@@ -1,5 +1,6 @@
 .DS_Store
 osm-data/*.osm
+osm-data/*.bz2
 conf/*.conf
 osm-data-cache/
 osm-data-tmp/
