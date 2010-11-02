@@ -1,14 +1,14 @@
 style-file: ../styles/outdoorstyle
-description: 'Openstreetmap Austria 30.10.2010'
-country-name: Austria
-country-abbr: AT
-product-id: 1
-series-name: OSM-Outdoor-Austria
+description: 'Openstreetmap Germany 31.10.2010'
+country-name: Germany
+country-abbr: DE
+product-id: 2
+series-name: OSM-Outdoor-Germandy
 overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
-area-name: Austria
-mapname: 63240370
+area-name: Germany
+mapname: 63340370
 draw-priority: 25
 add-pois-to-areas
 make-all-cycleways
