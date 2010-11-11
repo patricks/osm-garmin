@@ -13,9 +13,6 @@
 
 #usage example:  ./osm-build_map.sh -c austria -t outdoor
 
-# enable pbf file format
-ENABLEPBF="YES"
-
 # current date
 CDATE=`date "+%G%m%d"`
 

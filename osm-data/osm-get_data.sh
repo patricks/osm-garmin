@@ -11,8 +11,13 @@
 #                                                                             #
 ###############################################################################
 
-# enable pbf file format
-ENABLEPBF="YES"
+# read the config from a seperate file
+if [ -r ../conf/machine.conf ]; then
+    . ../conf/machine.conf
+else
+    echo "ERROR: No machine config file found."
+    exit -1
+fi
 
 if [ ! -x /usr/bin/curl ]; then
 	echo "ERROR: curl not found."
@@ -25,6 +30,7 @@ else
 	if [ ! -x /usr/bin/bunzip2 ]; then
 		echo "ERROR: bunzip2 not found."
 		exit -1
+	fi
 fi
 
 if [ -z "$1" ]; then
@@ -34,17 +40,19 @@ else
 	COUNTRY=$1
 fi
 
-# remove old data
-rm -rf $COUNTRY.osm*
-
 # downloads the current osm data from the geofabrik server
 if [ "$ENABLEPBF" = "YES" ]; then
+	# remove old data
+	rm -rf $COUNTRY.osm.pbf
+
 	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
 else
+	# remove old data
+	rm -rf $COUNTRY.osm.bz2
+	rm -rf $COUNTRY.osm
+
 	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
 
 	# extract the data file
 	bunzip2 $COUNTRY.osm.bz2
 fi
-
-
