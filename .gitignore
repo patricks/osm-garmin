@@ -1,11 +1,12 @@
 .DS_Store
 osm-data/*.osm
 osm-data/*.bz2
+osm-data/*.pbf
 conf/*.conf
 osm-data-cache/
 osm-data-tmp/
-mkgmap/splitter-svn/
-mkgmap/mkgmap-svn/
+mkgmap/splitter-*
+mkgmap/mkgmap-*
 osm-map-std/
 osm-map-outdoor/build/
 osm-map-outdoor/dist/

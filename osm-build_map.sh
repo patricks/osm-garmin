@@ -13,6 +13,9 @@
 
 #usage example:  ./osm-build_map.sh -c austria -t outdoor
 
+# enable pbf file format
+ENABLEPBF="YES"
+
 # current date
 CDATE=`date "+%G%m%d"`
 
@@ -214,7 +217,11 @@ fi
 STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
 
 #osm data xml file
-OSMDATA="$OSMDATADIR/$COUNTRY.osm"
+if [ "$ENABLEPBF" = "YES" ]; then
+	OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
+else
+	OSMDATA="$OSMDATADIR/$COUNTRY.osm"
+fi
 
 if [ ! -f "$OSMDATA" ]; then
 	echo "INFO: No OSM Data file ($OSMDATA)found staring download"

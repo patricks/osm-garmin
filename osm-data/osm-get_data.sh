@@ -11,14 +11,20 @@
 #                                                                             #
 ###############################################################################
 
+# enable pbf file format
+ENABLEPBF="YES"
+
 if [ ! -x /usr/bin/curl ]; then
 	echo "ERROR: curl not found."
 	exit -1
 fi
 
-if [ ! -x /usr/bin/bunzip2 ]; then
-	echo "ERROR: bunzip2 not found."
-	exit -1
+if [ "$ENABLEPBF" = "YES" ]; then
+	echo "INFO: using new pbf format."
+else
+	if [ ! -x /usr/bin/bunzip2 ]; then
+		echo "ERROR: bunzip2 not found."
+		exit -1
 fi
 
 if [ -z "$1" ]; then
@@ -32,8 +38,13 @@ fi
 rm -rf $COUNTRY.osm*
 
 # downloads the current osm data from the geofabrik server
-curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
+if [ "$ENABLEPBF" = "YES" ]; then
+	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
+else
+	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
 
-# extract the data file
-bunzip2 $COUNTRY.osm.bz2
+	# extract the data file
+	bunzip2 $COUNTRY.osm.bz2
+fi
+
 
