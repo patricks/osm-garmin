@@ -3,9 +3,9 @@
 #                                                                             #
 # download the daily osm country file from geofabrik.de                       #
 #                                                                             #
-# @version: 1.00                                                              #
+# @version: 1.10                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
-# @date: 27.07.2010 13:29                                                     #
+# @date: 12.11.2010 09:29                                                     #
 # License: GPL                                                                #
 # http://www.fsf.org/licenses/gpl.htmlfree for all                            #
 #                                                                             #

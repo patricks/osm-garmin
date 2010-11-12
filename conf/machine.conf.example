@@ -5,7 +5,7 @@ ENABLEPBF="NO"
 UMEM=2048
 
 # path where this script is placed
-OSMGARMINDIR="/Users/foobar/osm-garmin"
+OSMGARMINDIR="/home/user/osm-garmin"
 
 # splitter binary
 SPLITTERBIN="$OSMGARMINDIR/mkgmap/splitter-svn/dist/splitter.jar"

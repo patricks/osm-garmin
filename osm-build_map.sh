@@ -3,9 +3,9 @@
 #                                                                             #
 # builds an osm map for garmin devices                                        #
 #                                                                             #
-# @version: 1.11                                                              #
+# @version: 1.20                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
-# @date: 08.03.2010 14:55                                                     #
+# @date: 12.11.2010 09:30                                                     #
 # License: GPL                                                                #
 # http://www.fsf.org/licenses/gpl.htmlfree for all                            #
 #                                                                             #
