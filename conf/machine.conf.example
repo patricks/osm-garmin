@@ -12,3 +12,8 @@ SPLITTERBIN="$OSMGARMINDIR/mkgmap/splitter-svn/dist/splitter.jar"
 
 # mkgmap binary
 MKGMAPBIN="$OSMGARMINDIR/mkgmap/mkgmap-svn/dist/mkgmap.jar"
+
+# remote ssh server
+REMOTEUSER="user"
+REMOTEHOST="host"
+REMOTEDIR="/home/user/garmin/"

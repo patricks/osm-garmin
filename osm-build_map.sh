@@ -117,6 +117,17 @@ function build_device_file()
 	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY.img
 }
 
+# scp garmin img to another server
+function scp_device_file()
+{
+	# check if scp is available
+	if [ ! -x /usr/bin/scp ]; then
+		echo "ERROR: scp not found."
+		exit -1
+	fi
+	scp -r $STDMAPDIR/dist/$CDATE/ $REMOTEUSER@$REMOTEHOST:$REMOTEDIR
+}
+
 # updates osm data
 function update_osm_data()
 {
@@ -134,6 +145,7 @@ OPTIONS:
 	-c <country>	Define the country
 	-d		Download osm data
 	-t <map type>	Select the map type
+	-u		Upload files to another server
 	-h		Show this message
 
 EOF
@@ -143,7 +155,7 @@ EOF
 # MAIN                                                                        #
 ###############################################################################
 
-while getopts ht:dc: OPTION
+while getopts ht:duc: OPTION
 do
 	case $OPTION in
 	c)
@@ -154,6 +166,9 @@ do
 		;;
 	t)
 		MAPTYPE=$OPTARG
+		;;
+	u)
+		UPLOAD="YES"
 		;;
 	h)
 		usage
@@ -232,6 +247,10 @@ check_apps
 split_map
 build_map
 build_device_file
+
+if [ "$UPLOAD" = "YES" ]; then
+	scp_device_file
+fi
 
 echo "Build process finished at: `date`"
 
