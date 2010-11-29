@@ -220,6 +220,11 @@ else
 	fi
 fi
 
+# upload finshed gmap file to server
+if [ "$UPLOAD" = "YES" ]; then
+	echo "Uploading to server enabled"
+fi
+
 # download osm data if it is required
 if [ "$DLData" = "YES" ]; then
 	update_osm_data $COUNTRY

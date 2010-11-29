@@ -1,9 +1,9 @@
 style-file: ../styles/outdoorstyle
-description: 'Openstreetmap Germany 31.10.2010'
+description: 'Openstreetmap Germany 29.11.2010'
 country-name: Germany
 country-abbr: DE
 product-id: 2
-series-name: OSM-Outdoor-Germandy
+series-name: OSM-Outdoor-Germany
 overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
