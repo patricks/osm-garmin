@@ -84,11 +84,18 @@ function build_cfg_files()
 		exit -1
 	fi
 
-	# sed -i is not available in all sed versions
+	# generate a random number if we build different countries
 	PRETTYCOUNTRY=`echo $COUNTRY | tr [a-z] [A-Z]`
+
+	# create a random number between 20 and 40
+	PRETTYNUMBER=`echo $((RANDOM%20+40))`
+
+	# sed -i is not available in all sed versions
 	sed "s|PDATE|$PRETTYDATE|g" options.args > options.args.tmp
-	sed "s|PCOUNTRY|$PRETTYCOUNTRY|g" options.args.tmp > options.args.$COUNTRY
+	sed "s|PCOUNTRY|$PRETTYCOUNTRY|g" options.args.tmp > options.args.tmp1
+	sed "s|PNUMBER|$PRETTYNUMBER|g" options.args.tmp1 > options.args.$COUNTRY
 	rm -f options.args.tmp
+	rm -f options.args.tmp1
 }
 
 # split osm data

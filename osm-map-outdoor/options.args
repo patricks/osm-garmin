@@ -8,7 +8,7 @@ overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
 area-name: PCOUNTRY
-mapname: 63240370
+mapname: 63PNUMBER0370
 draw-priority: 25
 add-pois-to-areas
 make-all-cycleways
