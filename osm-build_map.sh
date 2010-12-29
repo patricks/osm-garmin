@@ -283,9 +283,9 @@ echo "Starting build process at: `date`"
 build_directories
 check_apps
 build_cfg_files
-#split_map
-#build_map
-#build_device_file
+split_map
+build_map
+build_device_file
 
 if [ "$UPLOAD" = "YES" ]; then
 	scp_device_file
