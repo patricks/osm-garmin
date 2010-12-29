@@ -1,14 +1,14 @@
 style-file: ../styles/outdoorstyle
-description: 'Openstreetmap Germany 29.11.2010'
-country-name: Germany
-country-abbr: DE
-product-id: 2
-series-name: OSM-Outdoor-Germany
+description: 'Openstreetmap PCOUNTRY PDATE'
+country-name: PCOUNTRY
+country-abbr: PCOUNTRY
+product-id: 1
+series-name: OSM-Outdoor-PCOUNTRY
 overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
-area-name: Germany
-mapname: 63340370
+area-name: PCOUNTRY
+mapname: 63240370
 draw-priority: 25
 add-pois-to-areas
 make-all-cycleways

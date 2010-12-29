@@ -16,6 +16,9 @@
 # current date
 CDATE=`date "+%G%m%d"`
 
+# strings for the config files
+PRETTYDATE=`date "+%d.%m.%G"`
+
 CWD=`pwd`
 
 # check for core applications
@@ -24,6 +27,12 @@ function check_apps()
 	# java
 	if [ ! -x /usr/bin/java ]; then
 		echo "ERROR: java not found."
+		exit -1
+	fi
+
+	# sed
+	if [ ! -x /usr/bin/sed ]; then
+		echo "ERROR: sed not found."
 		exit -1
 	fi
 
@@ -65,13 +74,30 @@ function build_directories()
 	fi
 }
 
+# build tmp config files
+function build_cfg_files()
+{
+	cd $STDMAPDIR
+
+	if [ ! -f options.args ]; then
+		echo "INFO: options.args not found"
+		exit -1
+	fi
+
+	# sed -i is not available in all sed versions
+	PRETTYCOUNTRY=`echo $COUNTRY | tr [a-z] [A-Z]`
+	sed "s|PDATE|$PRETTYDATE|g" options.args > options.args.tmp
+	sed "s|PCOUNTRY|$PRETTYCOUNTRY|g" options.args.tmp > options.args.$COUNTRY
+	rm -f options.args.tmp
+}
+
 # split osm data
 function split_map()
 {
 	echo "Spliting map ("$OSMDATA")..."
 	cd $OSMDATATMP
 	rm -rf *.gz *.list *.args
-	java -Xmx${UMEM}M -jar $SPLITTERBIN --mapid=63240345 --max-nodes=1000000 --cache=$OSMDATACACHE $OSMDATA
+	java -Xmx${UMEM}M -jar $SPLITTERBIN --max-nodes=1000000 --cache=$OSMDATACACHE $OSMDATA
 }
 
 # build garmin img files
@@ -249,9 +275,10 @@ echo "Starting build process at: `date`"
 
 build_directories
 check_apps
-split_map
-build_map
-build_device_file
+build_cfg_files
+#split_map
+#build_map
+#build_device_file
 
 if [ "$UPLOAD" = "YES" ]; then
 	scp_device_file
