@@ -2,14 +2,14 @@ style-file: ../styles/outdoorstyle
 description: 'Openstreetmap PCOUNTRY PDATE'
 country-name: PCOUNTRY
 country-abbr: PCOUNTRY
-product-id: 1
+product-id: PNUMBER
 series-name: OSM-Outdoor-PCOUNTRY
 overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
 family-id: 4
 area-name: PCOUNTRY
-mapname: 63PNUMBER0370
-draw-priority: 25
+mapname: 632PNUMBER0345
+draw-priority: 10
 add-pois-to-areas
 make-all-cycleways
 link-pois-to-ways
@@ -21,4 +21,3 @@ tdbfile
 gmapsupp
 max-jobs
 verbose
-
