@@ -1,25 +1,27 @@
 #!/bin/sh
 ###############################################################################
 #                                                                             #
-# download and build the latest mkgmap svn version                            #
+# download the latest mkgmap version                                          #
 #                                                                             #
 # @version: 1.00                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
-# @date: 06.09.2010 11:21                                                     #
+# @date: 10.01.2011 10:27                                                     #
 # License: GPL                                                                #
 # http://www.fsf.org/licenses/gpl.htmlfree for all                            #
 #                                                                             #
 ###############################################################################
 
+if [ ! -x /usr/bin/curl ]; then
+    echo "ERROR: curl not found."
+    exit -1
+fi
+
 CWD=`pwd`
 
-svn co http://svn.mkgmap.org.uk/splitter/trunk splitter-svn
+curl -O http://www.mkgmap.org.uk/splitter/splitter-r123.tar.gz
+tar -xvzf splitter-r123.tar.gz
+ln -s splitter-r123/splitter.jar splitter.jar
 
-svn co http://svn.parabola.me.uk/mkgmap/trunk mkgmap-svn
-
-cd $CWD/splitter-svn
-ant
-
-cd $CWD/mkgmap-svn
-ant
-
+curl -O http://www.mkgmap.org.uk/snapshots/mkgmap-latest.tar.gz
+tar -xvzf mkgmap-latest.tar.gz
+ln -s mkgmap-r1670/mkgmap.jar mkgmap.jar
