@@ -11,3 +11,4 @@ mkgmap/mkgmap-*
 osm-map-std/
 osm-map-outdoor/build/
 osm-map-outdoor/dist/
+osm-map-outdoor/options.args.*

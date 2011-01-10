@@ -163,7 +163,7 @@ barrier=hedge       [0x34 resolution 24 continue]
 man_made=pipeline   [0x28 resolution 22]
 
 # power
-power=line          {name 'Powerline (${voltage} V)'}   [0x29 resolution 22]
+power=line          [0x29 resolution 22]
 
 # natural
 natural=coastline   [0x15 resolution 12]
