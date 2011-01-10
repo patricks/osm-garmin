@@ -1,4 +1,4 @@
-style-file: ../styles/outdoorstyle
+style-file: ../styles/outdoor_style
 description: 'Openstreetmap PCOUNTRY PDATE'
 country-name: PCOUNTRY
 country-abbr: PCOUNTRY

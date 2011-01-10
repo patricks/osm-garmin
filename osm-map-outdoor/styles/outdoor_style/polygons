@@ -36,6 +36,7 @@ landuse=farm | landuse=farmland [0x2a resolution 20]
 landuse=farmyard [0x2b resolution 20]
 landuse=vineyard [0x2c resolution 20]
 landuse=quarry [0x2d resolution 20]
+landuse=military [0x04 resolution 20]
 
 tourism=camp_site [0x2e resolution 20]
 
