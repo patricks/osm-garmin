@@ -5,7 +5,8 @@ osm-data/*.pbf
 conf/*.conf
 osm-data-cache/
 osm-data-tmp/
-mkgmap/splitter-*
+mkgmap/splitter*
+mkgmap/mkgmap.*
 mkgmap/mkgmap-*
 osm-map-std/
 osm-map-outdoor/build/
