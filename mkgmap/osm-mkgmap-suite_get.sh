@@ -18,13 +18,16 @@ fi
 
 CWD=`pwd`
 
+SVER="123"
+MVER="1804"
+
 rm -rf splitter*
 rm -rf mkgmap*
 
-curl -O http://www.mkgmap.org.uk/splitter/splitter-r123.tar.gz
-tar -xvzf splitter-r123.tar.gz
-ln -s splitter-r123/splitter.jar splitter.jar
+curl -O http://www.mkgmap.org.uk/splitter/splitter-r$SVER.tar.gz
+tar -xvzf splitter-r$SVER.tar.gz
+ln -s splitter-r$SVER/splitter.jar splitter.jar
 
-curl -O http://www.mkgmap.org.uk/snapshots/mkgmap-latest.tar.gz
-tar -xvzf mkgmap-latest.tar.gz
-ln -s mkgmap-r1773/mkgmap.jar mkgmap.jar
+curl -O http://www.mkgmap.org.uk/snapshots/mkgmap-r$MVER.tar.gz
+tar -xvzf mkgmap-r$MVER.tar.gz
+ln -s mkgmap-r$MVER/mkgmap.jar mkgmap.jar
