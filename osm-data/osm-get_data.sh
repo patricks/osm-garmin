@@ -45,13 +45,21 @@ if [ "$ENABLEPBF" = "YES" ]; then
 	# remove old data
 	rm -rf $COUNTRY.osm.pbf
 
-	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
+	if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
+		curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.pbf
+	else
+		curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
+	fi
 else
 	# remove old data
 	rm -rf $COUNTRY.osm.bz2
 	rm -rf $COUNTRY.osm
 
-	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
+	if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
+		curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.bz2
+	else
+		curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
+	fi
 
 	# extract the data file
 	bunzip2 $COUNTRY.osm.bz2
