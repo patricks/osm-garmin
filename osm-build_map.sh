@@ -158,7 +158,7 @@ function scp_device_file()
 		echo "ERROR: scp not found."
 		exit -1
 	fi
-	scp -r $STDMAPDIR/dist/$CDATE/ $REMOTEUSER@$REMOTEHOST:$REMOTEDIR
+	scp -r $STDMAPDIR/dist/$CDATE/gmapsupp_$COUNTRY.img $REMOTEUSER@$REMOTEHOST:$REMOTEDIR
 }
 
 # updates osm data
