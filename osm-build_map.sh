@@ -11,7 +11,7 @@
 #                                                                             #
 ###############################################################################
 
-#usage example:  ./osm-build_map.sh -c austria -t outdoor
+#usage example:  ./osm-build_map.sh -d -c austria -t outdoor
 
 # current date
 CDATE=`date "+%G%m%d"`
