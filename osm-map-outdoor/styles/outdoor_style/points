@@ -241,7 +241,7 @@ power=generator [0x7200 resolution 24]
 
 #highway=traffic_signals [0x7010 resolution 24]
 #highway=stop [0x7011 resolution 24]
-highway=crossing [0x6406 resolution 24]
+#highway=crossing [0x6406 resolution 24]
 traffic_sign=city_limit [0x7013 resolution 24]
 highway=mini_roundabout [0x7014 resolution 24]
 
