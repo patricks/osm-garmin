@@ -1,7 +1,7 @@
 osm-garmin
 ==========
 
-a simple shell script collection to build openstreetmap maps for garmin devices
+a simple shell script collection to build openstreetmap maps for garmin devices. this maps are optimized for outdoor usage.
 
 Installation
 ------------
