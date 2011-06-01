@@ -250,7 +250,7 @@ highway=motorway_junction [0x2000 resolution 22]
 highway=services { name '${ref} ${name}' | '${ref}' | '${name}'; }
 highway=services [0x210f resolution 22]
 highway=speed_camera { name 'Blitzt ${maxspeed} km/h'; } [0x5601 resolution 24]
-noexit=yes [0x5d00 resolution 24]
+#noexit=yes [0x5d00 resolution 24]
 
 #------------------------------------------------------------------------------
 # man-made

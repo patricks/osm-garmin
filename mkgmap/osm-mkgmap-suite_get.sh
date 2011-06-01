@@ -18,8 +18,8 @@ fi
 
 CWD=`pwd`
 
-SVER="171"
-MVER="1932"
+SVER="174"
+MVER="1955"
 
 rm -rf splitter*
 rm -rf mkgmap*
