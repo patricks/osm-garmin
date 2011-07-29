@@ -24,15 +24,6 @@ if [ ! -x /usr/bin/curl ]; then
 	exit -1
 fi
 
-if [ "$ENABLEPBF" = "YES" ]; then
-	echo "INFO: using new pbf format."
-else
-	if [ ! -x /usr/bin/bunzip2 ]; then
-		echo "ERROR: bunzip2 not found."
-		exit -1
-	fi
-fi
-
 if [ -z "$1" ]; then
 	echo "INFO: No country name given, using default (austria)"
 	COUNTRY="austria"
@@ -41,26 +32,11 @@ else
 fi
 
 # downloads the current osm data from the geofabrik server
-if [ "$ENABLEPBF" = "YES" ]; then
-	# remove old data
-	rm -rf $COUNTRY.osm.pbf
+# remove old data
+rm -rf $COUNTRY.osm.pbf
 
-	if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
-		curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.pbf
-	else
-		curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
-	fi
+if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
+	curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.pbf
 else
-	# remove old data
-	rm -rf $COUNTRY.osm.bz2
-	rm -rf $COUNTRY.osm
-
-	if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
-		curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.bz2
-	else
-		curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.bz2
-	fi
-
-	# extract the data file
-	bunzip2 $COUNTRY.osm.bz2
+	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
 fi

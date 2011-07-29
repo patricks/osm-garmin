@@ -1,6 +1,3 @@
-# enable pbf file format (also requires pbf support in mkgmap and splitter)
-ENABLEPBF="NO"
-
 # memory
 UMEM=2048
 

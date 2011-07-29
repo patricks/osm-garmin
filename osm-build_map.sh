@@ -103,7 +103,7 @@ function split_map()
 {
 	echo "Spliting map ("$OSMDATA")..."
 	cd $OSMDATATMP
-	rm -rf *.gz *.list *.args
+	rm -rf *.pbf *.list *.args
 	java -Xmx${UMEM}M -jar $SPLITTERBIN --max-nodes=1000000 --cache=$OSMDATACACHE $OSMDATA
 }
 
@@ -126,10 +126,10 @@ function build_map()
 	# check if options file is available
 	if [ -f ../options.args.$COUNTRY ]; then
 		echo "INFO: Using options.args.$COUNTRY"
-		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.gz $TYPFILE
+		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs -c ../options.args.$COUNTRY $OSMDATATMP/*.osm.pbf $TYPFILE
 	else
 		echo "INFO: options.args.$COUNTRY not found"
-		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs --gmapsupp $OSMDATATMP/*.osm.gz $TYPFILE
+		java -Xmx${UMEM}M -jar $MKGMAPBIN --max-jobs --gmapsupp $OSMDATATMP/*.osm.pbf $TYPFILE
 	fi
 }
 
