@@ -266,12 +266,7 @@ fi
 # osm style type directory
 STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
 
-#osm data xml file
-if [ "$ENABLEPBF" = "YES" ]; then
-	OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
-else
-	OSMDATA="$OSMDATADIR/$COUNTRY.osm"
-fi
+OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
 
 if [ ! -f "$OSMDATA" ]; then
 	echo "INFO: No OSM Data file ($OSMDATA)found staring download"
