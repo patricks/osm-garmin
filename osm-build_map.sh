@@ -147,7 +147,7 @@ function build_device_file()
 		mkdir $STDMAPDIR/dist/$CDATE/$MAPTYPE
 	fi
 
-	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY.img
+	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY_$CDATE.img
 }
 
 # scp garmin img to another server
