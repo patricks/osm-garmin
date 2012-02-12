@@ -147,7 +147,7 @@ function build_device_file()
 		mkdir $STDMAPDIR/dist/$CDATE/$MAPTYPE
 	fi
 
-	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY_$CDATE.img
+	cp gmapsupp.img $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_${COUNTRY}_${CDATE}.img
 }
 
 # scp garmin img to another server
@@ -158,7 +158,7 @@ function scp_device_file()
 		echo "ERROR: scp not found."
 		exit -1
 	fi
-	scp -r $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_$COUNTRY.img $REMOTEUSER@$REMOTEHOST:$REMOTEDIR
+	scp -r $STDMAPDIR/dist/$CDATE/$MAPTYPE/gmapsupp_${COUNTRY}_${CDATE}.img $REMOTEUSER@$REMOTEHOST:$REMOTEDIR
 }
 
 # updates osm data
