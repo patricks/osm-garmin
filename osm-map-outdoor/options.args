@@ -15,7 +15,6 @@ make-all-cycleways
 link-pois-to-ways
 remove-short-arcs
 latin1
-net
 route
 gmapsupp
 max-jobs
