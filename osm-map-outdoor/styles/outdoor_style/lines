@@ -100,8 +100,8 @@ highway=track & tracktype=grade2 & (route=* | ref=*)    [0x0f road_class=1 road_
 highway=track & tracktype=grade2                        [0x0f road_class=1 road_speed=2 resolution 22]
 highway=track & tracktype=grade3 & (route=* | ref=*)    [0x10 road_class=0 road_speed=1 resolution 21]
 highway=track & tracktype=grade3                        [0x10 road_class=0 road_speed=1 resolution 22]
-highway=track & tracktype=grade4                        [0x11 road_class=0 road_speed=0 resolution 23]
-highway=track & tracktype=grade5                        [0x12 road_class=0 road_speed=0 resolution 23]
+highway=track & tracktype=grade4                        [0x11 road_class=0 road_speed=0 resolution 22]
+highway=track & tracktype=grade5                        [0x12 road_class=0 road_speed=0 resolution 22]
 
 highway=track | highway=unsurfaced { add motorcar=no; } [0x0a road_class=0 road_speed=0 resolution 22]
 
