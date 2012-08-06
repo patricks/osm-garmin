@@ -32,8 +32,10 @@ function check_apps()
 
 	# sed
 	if [ ! -x /usr/bin/sed ]; then
-		echo "ERROR: sed not found."
-		exit -1
+		if [ ! -x /bin/sed ]; then
+			echo "ERROR: sed not found."
+			exit -1
+		fi
 	fi
 
 	# mkgmap splitter
