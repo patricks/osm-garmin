@@ -11,15 +11,15 @@
 #                                                                             #
 ###############################################################################
 
+SVER="200"
+MVER="2313"
+
+CWD=`pwd`
+
 if [ ! -x /usr/bin/curl ]; then
     echo "ERROR: curl not found."
     exit -1
 fi
-
-CWD=`pwd`
-
-SVER="200"
-MVER="2310"
 
 rm -rf splitter*
 rm -rf mkgmap*
