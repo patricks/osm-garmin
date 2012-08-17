@@ -76,6 +76,26 @@ function build_directories()
 	fi
 }
 
+# cleans up the build directories
+function clean_directories()
+{
+	if [ -d $STDMAPDIR/build ]; then
+		rm -rf $STDMAPDIR/build
+	fi
+
+	if [ -d $STDMAPDIR/dist ]; then
+		rm -rf $STDMAPDIR/dist
+	fi
+	
+	if [ -d $OSMDATACACHE ]; then
+		mkdir $OSMDATACACHE
+	fi
+
+	if [ -d $OSMDATATMP ]; then
+		mkdir $OSMDATATMP
+	fi
+}
+
 # build tmp config files
 function build_cfg_files()
 {
@@ -181,6 +201,7 @@ OPTIONS:
 	-d		Download osm data
 	-t <map type>	Select the map type
 	-u		Upload files to another server
+	-x		Cleanup build directories
 	-h		Show this message
 
 EOF
@@ -190,7 +211,7 @@ EOF
 # MAIN                                                                        #
 ###############################################################################
 
-while getopts ht:duc: OPTION
+while getopts ht:duxc: OPTION
 do
 	case $OPTION in
 	c)
@@ -204,6 +225,10 @@ do
 		;;
 	u)
 		UPLOAD="YES"
+		;;
+	x)
+		clean_directories
+		exit 0
 		;;
 	h)
 		usage
