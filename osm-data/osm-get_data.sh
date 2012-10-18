@@ -35,8 +35,13 @@ fi
 # remove old data
 rm -rf $COUNTRY.osm.pbf
 
-if [ "$COUNTRY" = "germany" ] || [ "$COUNTRY" = "europe" ]; then
-	curl -O http://ftp5.gwdg.de/pub/misc/openstreetmap/download.geofabrik.de/$COUNTRY.osm.pbf
+if [ "$COUNTRY" = "africa" ] || 
+	[ "$COUNTRY" = "asia" ] || 
+	[ "$COUNTRY" = "australia-oceania" ] || 
+	[ "$COUNTRY" = "central-america" ] || 
+	[ "$COUTNRY" = "europe" ] || 
+	[ "$COUNTRY" = "south-america" ]; then
+	curl -O http://download.geofabrik.de/openstreetmap/$COUNTRY.osm.bz2
 else
-	curl -O http://download.geofabrik.de/osm/europe/$COUNTRY.osm.pbf
+	curl -O http://download.geofabrik.de/openstreetmap/europe/$COUNTRY.osm.pbf
 fi
