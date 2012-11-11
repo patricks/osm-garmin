@@ -1,5 +1,6 @@
 .DS_Store
 osm-bounds/bounds/*.zip
+osm-bounds/bounds/*.bnd
 osm-data/*.osm
 osm-data/*.bz2
 osm-data/*.pbf
