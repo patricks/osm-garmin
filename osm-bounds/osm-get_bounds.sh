@@ -11,9 +11,21 @@
 #                                                                             #
 ###############################################################################
 
+VERSION="20121019"
+
+CWD=`pwd`
+
 if [ ! -x /usr/bin/curl ]; then
 	echo "ERROR: curl not found."
 	exit -1
 fi
 
-curl -O http://www.navmaps.eu/wanmil/bounds_20121019.zip
+rm -rf bounds && mkdir bounds
+
+cd bounds/
+
+curl -O http://www.navmaps.eu/wanmil/bounds_${VERSION}.zip
+
+unzip bounds_${VERSION}.zip
+
+cd $CWD
