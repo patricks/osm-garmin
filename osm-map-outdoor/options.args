@@ -2,7 +2,7 @@ style-file: ../styles/outdoor_style
 description: 'Openstreetmap PCOUNTRY PDATE'
 country-name: PCOUNTRY
 country-abbr: PCOUNTRY
-product-id: 1
+product-id: 23
 series-name: OSM-Outdoor-PCOUNTRY
 overview-mapname: OSM-Outdoor
 family-name: OSM-Outdoor
@@ -10,13 +10,12 @@ family-id: 4
 area-name: PCOUNTRY
 mapname: 632PNUMBER345
 draw-priority: 10
+bounds: ../../osm-bounds/bounds
+location-autofill: bounds,is_in,nearest
 add-pois-to-areas
-make-all-cycleways
-link-pois-to-ways
 remove-short-arcs
 latin1
 route
 gmapsupp
-max-jobs
 index
-verbose
+#verbose

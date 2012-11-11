@@ -54,6 +54,11 @@ function check_apps()
 # build core directories
 function build_directories()
 {
+	if [ ! -d $OSMGARMINDIR/osm-bounds/bounds ]; then
+		echo "ERROR: download boundaries first."
+		exit -1
+	fi
+
 	# std map std dirs
 	if [ ! -d $STDMAPDIR ]; then
 		mkdir $STDMAPDIR
