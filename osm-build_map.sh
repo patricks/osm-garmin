@@ -84,6 +84,8 @@ function build_directories()
 # cleans up the build directories
 function clean_directories()
 {
+	echo "Cleaning up directories..."
+	
 	if [ -d $STDMAPDIR/build ]; then
 		rm -rf $STDMAPDIR/build
 	fi
@@ -93,11 +95,11 @@ function clean_directories()
 	fi
 	
 	if [ -d $OSMDATACACHE ]; then
-		mkdir $OSMDATACACHE
+		rm -rf $OSMDATACACHE
 	fi
 
 	if [ -d $OSMDATATMP ]; then
-		mkdir $OSMDATATMP
+		rm -rf $OSMDATATMP
 	fi
 }
 
@@ -216,36 +218,6 @@ EOF
 # MAIN                                                                        #
 ###############################################################################
 
-while getopts ht:duxc: OPTION
-do
-	case $OPTION in
-	c)
-		COUNTRY=$OPTARG
-		;;
-	d)
-		DLData="YES"
-		;;
-	t)
-		MAPTYPE=$OPTARG
-		;;
-	u)
-		UPLOAD="YES"
-		;;
-	x)
-		clean_directories
-		exit 0
-		;;
-	h)
-		usage
-		exit 0
-		;;
-	\?)
-		usage >&2
-		exit 1
-		;;
-	esac
-done
-
 # read the config from a seperate file
 if [ -r conf/machine.conf ]; then
 	. conf/machine.conf
@@ -266,6 +238,35 @@ OSMDATATMP="$OSMGARMINDIR/osm-data-tmp"
 # cache directory
 OSMDATACACHE="$OSMGARMINDIR/osm-data-cache"
 
+while getopts xht:duc: OPTION
+do
+	case $OPTION in
+	c)
+		COUNTRY=$OPTARG
+		;;
+	d)
+		DLData="YES"
+		;;
+	t)
+		MAPTYPE=$OPTARG
+		;;
+	u)
+		UPLOAD="YES"
+		;;
+	x)
+		CLEANDIRS="YES"
+		;;
+	h)
+		usage
+		exit 0
+		;;
+	\?)
+		usage >&2
+		exit 1
+		;;
+	esac
+done
+
 if [ -z "$COUNTRY" ]; then
 	echo "Using default country (austria)"
 	COUNTRY="austria"
@@ -285,6 +286,17 @@ else
 	fi
 fi
 
+# osm style type directory
+STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
+
+OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
+
+# clean up directories
+if [ "$CLEANDIRS" = "YES" ]; then
+	clean_directories
+	exit 0
+fi
+
 # upload finshed gmap file to server
 if [ "$UPLOAD" = "YES" ]; then
 	echo "Uploading to server enabled"
@@ -294,11 +306,6 @@ fi
 if [ "$DLData" = "YES" ]; then
 	update_osm_data $COUNTRY
 fi
-
-# osm style type directory
-STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
-
-OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
 
 if [ ! -f "$OSMDATA" ]; then
 	echo "INFO: No OSM Data file ($OSMDATA)found staring download"
