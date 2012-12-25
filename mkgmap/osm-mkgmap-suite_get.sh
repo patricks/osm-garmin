@@ -24,10 +24,10 @@ fi
 rm -rf splitter*
 rm -rf mkgmap*
 
-curl -O http://www.mkgmap.org.uk/splitter/splitter-r$SVER.tar.gz
+curl -O http://www.mkgmap.org.uk/download/splitter-r$SVER.tar.gz
 tar -xvzf splitter-r$SVER.tar.gz
 ln -s splitter-r$SVER/splitter.jar splitter.jar
 
-curl -O http://www.mkgmap.org.uk/snapshots/mkgmap-r$MVER.tar.gz
+curl -O http://www.mkgmap.org.uk/download/mkgmap-r$MVER.tar.gz
 tar -xvzf mkgmap-r$MVER.tar.gz
 ln -s mkgmap-r$MVER/mkgmap.jar mkgmap.jar
