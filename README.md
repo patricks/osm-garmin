@@ -6,8 +6,9 @@ A simple shell script collection to build openstreetmap maps for garmin devices.
 Installation
 ------------
 
-* Create a *machine.conf* file in the conf directory (copy and motify the machine.conf.example file)
-* [optional] Get mkgmap and mkgmap splitter jars or build it via the *mkgmap-suite_get.sh* script
+* Create a *machine.conf* file in the conf directory (copy and motify the machine.conf.example file).
+* Download boundaries with the *osm-get_bounds.sh* script.
+* [optional] Get mkgmap and mkgmap splitter jars or build it via the *mkgmap-suite_get.sh* script.
 
 Usage
 -----

@@ -55,7 +55,7 @@ function check_apps()
 function build_directories()
 {
 	if [ ! -d $OSMGARMINDIR/osm-bounds/bounds ]; then
-		echo "ERROR: download boundaries first."
+		echo "ERROR: Download boundaries first."
 		exit -1
 	fi
 
