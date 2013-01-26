@@ -48,19 +48,19 @@ highway=motorway_link   { add bicycle=no; add foot=no; } [0x01 road_class=3 road
 
 # trunk
 highway=trunk & junction=roundabout         [0x0c road_class=4 road_speed=5 resolution 16]
-highway=trunk | highway=trunk_link          { name '${ref|highway-symbol:hbox} ${name}' | '${ref|highway-symbol:hbox}' | '${name}'; add display_name='${name} (${ref})'; }   [0x02 road_class=4 road_speed=6 resolution 17]
+highway=trunk | highway=trunk_link          { name '${ref|highway-symbol:hbox} ${name}' | '${ref|highway-symbol:hbox}' | '${name}'; add mkgmap:display_name='${name} (${ref})'; }   [0x02 road_class=4 road_speed=6 resolution 17]
 
 # primary
 highway=primary & junction=roundabout       [0x0c road_class=3 road_speed=4 resolution 17]
-highway=primary | highway=primary_link      { name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; add display_name='${name} (${ref})'; } [0x02 road_class=3 road_speed=5 resolution 17]
+highway=primary | highway=primary_link      { name '${ref|highway-symbol:box} ${name}' | '${ref|highway-symbol:box}' | '${name}'; add mkgmap:display_name='${name} (${ref})'; } [0x02 road_class=3 road_speed=5 resolution 17]
 
 # secondary
 highway=secondary & junction=roundabout     [0x0c road_class=3 road_speed=3 resolution 18]
-highway=secondary | highway=secondary_link  { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}'; add display_name='${name} (${ref})'; }   [0x03 road_class=3 road_speed=4 resolution 18]
+highway=secondary | highway=secondary_link  { name '${ref|highway-symbol:oval} ${name}' | '${ref|highway-symbol:oval}' | '${name}'; add mkgmap:display_name='${name} (${ref})'; }   [0x03 road_class=3 road_speed=4 resolution 18]
 
 # tertiary
 highway=tertiary & junction=roundabout      [0x0c road_class=2 road_speed=2 resolution 20]
-highway=tertiary | highway=tertiary_link    { name '${ref|highway-symbol:round} ${name}' | '${ref|highway-symbol:round}' | '${name}'; add display_name='${name} (${ref})'; }    [0x04 road_class=2 road_speed=3 resolution 20]
+highway=tertiary | highway=tertiary_link    { name '${ref|highway-symbol:round} ${name}' | '${ref|highway-symbol:round}' | '${name}'; add mkgmap:display_name='${name} (${ref})'; }    [0x04 road_class=2 road_speed=3 resolution 20]
 
 #------------------------------------------------------------------------------
 # minor roads
