@@ -41,7 +41,7 @@ if [ "$COUNTRY" = "africa" ] ||
 	[ "$COUNTRY" = "central-america" ] || 
 	[ "$COUTNRY" = "europe" ] || 
 	[ "$COUNTRY" = "south-america" ]; then
-	curl -O http://download.geofabrik.de/openstreetmap/$COUNTRY.osm.bz2
+	curl -O http://download.geofabrik.de/$COUNTRY-latest.osm.pbf
 else
-	curl -O http://download.geofabrik.de/openstreetmap/europe/$COUNTRY.osm.pbf
+	curl -O http://download.geofabrik.de/europe/$COUNTRY-latest.osm.pbf
 fi
