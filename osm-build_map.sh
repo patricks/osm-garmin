@@ -289,7 +289,7 @@ fi
 # osm style type directory
 STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
 
-OSMDATA="$OSMDATADIR/$COUNTRY.osm.pbf"
+OSMDATA="$OSMDATADIR/$COUNTRY-latest.osm.pbf"
 
 # clean up directories
 if [ "$CLEANDIRS" = "YES" ]; then
