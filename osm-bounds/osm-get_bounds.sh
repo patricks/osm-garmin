@@ -11,6 +11,8 @@
 #                                                                             #
 ###############################################################################
 
+# download bounds from: http://navmaps.org/boundaries
+
 VERSION="20121118"
 
 CWD=`pwd`
