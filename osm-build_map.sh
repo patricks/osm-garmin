@@ -3,9 +3,9 @@
 #                                                                             #
 # builds an osm map for garmin devices                                        #
 #                                                                             #
-# @version: 1.30                                                              #
+# @version: 1.4.0                                                             #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
-# @date: 29.12.2010 12:07                                                     #
+# @date: 02.09.2013 22:07                                                     #
 # License: GPL                                                                #
 # http://www.fsf.org/licenses/gpl.htmlfree for all                            #
 #                                                                             #
@@ -132,7 +132,7 @@ function split_map()
 {
 	echo "Spliting map ("$OSMDATA")..."
 	cd $OSMDATATMP
-	rm -rf *.pbf *.list *.args
+	rm -rf *.pbf *.list *.args *.osm
 	java -Xmx${UMEM}M -jar $SPLITTERBIN --max-nodes=1000000 --cache=$OSMDATACACHE $OSMDATA
 }
 
@@ -206,6 +206,7 @@ usage: $0 options
 OPTIONS:
 	-c <country>	Define the country
 	-d		Download osm data
+  -f <format>	Select the input format (osm|osm.pbf)
 	-t <map type>	Select the map type
 	-u		Upload files to another server
 	-x		Cleanup build directories
@@ -238,7 +239,7 @@ OSMDATATMP="$OSMGARMINDIR/osm-data-tmp"
 # cache directory
 OSMDATACACHE="$OSMGARMINDIR/osm-data-cache"
 
-while getopts xht:duc: OPTION
+while getopts xht:duc:f: OPTION
 do
 	case $OPTION in
 	c)
@@ -247,6 +248,9 @@ do
 	d)
 		DLData="YES"
 		;;
+  f)
+  	INFORMAT=$OPTARG
+  	;;
 	t)
 		MAPTYPE=$OPTARG
 		;;
@@ -286,10 +290,23 @@ else
 	fi
 fi
 
+# choose between osm and osm.pbf
+if [ -z "$INFORMAT" ]; then
+  echo "Using input format pbf"
+  INFORMAT="osm.pbf"
+else
+  echo "Using format ($INFORMAT)"
+fi
+
 # osm style type directory
 STDMAPDIR="$OSMGARMINDIR/osm-map-$MAPTYPE"
 
-OSMDATA="$OSMDATADIR/$COUNTRY-latest.osm.pbf"
+# use the latest extension only for geofabrik downloads
+if [ "$INFORMAT" = "osm" ]; then
+  OSMDATA="$OSMDATADIR/$COUNTRY.$INFORMAT"
+else
+  OSMDATA="$OSMDATADIR/$COUNTRY-latest.$INFORMAT"
+fi
 
 # clean up directories
 if [ "$CLEANDIRS" = "YES" ]; then
