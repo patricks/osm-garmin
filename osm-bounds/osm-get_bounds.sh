@@ -13,7 +13,7 @@
 
 # download bounds from: http://navmaps.org/boundaries
 
-VERSION="20130420"
+VERSION="20130814"
 
 CWD=`pwd`
 
