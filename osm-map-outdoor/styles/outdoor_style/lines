@@ -32,7 +32,7 @@ highway=*
 #------------------------------------------------------------------------------
 # construction and disused
 
-highway=construction | (highway=* & construction=* & construction!=minor & construction!=no)    [0x08 resolution 22]
+highway=construction | (highway=* & construction=* & construction!=minor & construction!=no)    [0x08  road_class=0 road_speed=0 resolution 22]
 
 # Treat disused ways as highway=service, but at lower road_speed.
 highway=* & disused=yes [0x07 road_class=0 road_speed=1 resolution 22]
@@ -133,7 +133,7 @@ highway=steps   { add motorcar=no; add bicycle=no; add mkgmap:unpaved=1; } [0x13
 #------------------------------------------------------------------------------
 # mop up any unrecognised highway types but keep areas like pedestrian for polygons!
 
-highway=* & area!=yes & area!=true & area!=1    [0x09 ]
+highway=* & area!=yes & area!=true & area!=1    [0x09 road_class=0 road_speed=0 resolution 22]
 junction=roundabout                             [0x0c road_class=1 road_speed=1 resolution 21]
 
 #------------------------------------------------------------------------------

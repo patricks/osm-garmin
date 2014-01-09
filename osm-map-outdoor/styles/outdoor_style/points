@@ -223,7 +223,7 @@ natural=spring [0x6511 resolution 23]
 natural=volcano [0x660e resolution 23]
 natural=wetland [0x6513 resolution 23]
 
-mountain_pass=yes [0x66 resolution 22]
+#mountain_pass=yes [0x66 resolution 22]
 
 #------------------------------------------------------------------------------
 # Energie
