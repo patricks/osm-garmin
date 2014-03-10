@@ -344,6 +344,6 @@ fi
 
 echo "Build process finished at: `date`"
 
-cd $PWD
+cd $CWD
 
 # vim:ts=4:sw=4:
