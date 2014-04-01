@@ -13,7 +13,7 @@
 
 # download bounds from: http://navmaps.org/boundaries
 
-VERSION="20140101"
+VERSION="20140311"
 
 CWD=`pwd`
 
@@ -26,7 +26,8 @@ rm -rf bounds && mkdir bounds
 
 cd bounds/
 
-curl -O http://www.navmaps.eu/wanmil/bounds_${VERSION}.zip
+#curl -O http://www.navmaps.eu/wanmil/bounds_${VERSION}.zip
+curl -O http://osm2.pleiades.uni-wuppertal.de/bounds/${VERSION}/bounds_${VERSION}.zip
 
 unzip bounds_${VERSION}.zip
 
