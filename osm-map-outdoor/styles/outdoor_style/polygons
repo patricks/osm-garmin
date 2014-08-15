@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Gebäude
+# Gebaeude
 
 building=* {name '${name} (${addr:street} ${addr:housenumber})' | '${addr:street} ${addr:housenumber}' | '${name}' } [0x13 resolution 24]
 
@@ -20,7 +20,7 @@ amenity=university [0x0a resolution 20]
 aeroway=aerodrome [0x07 resolution 18]
 
 #------------------------------------------------------------------------------
-# Flächennutzung
+# Flaechennutzung
 
 landuse=allotments [0x4e resolution 20]
 landuse=forest & wood=coniferous [0x21 resolution 18]
