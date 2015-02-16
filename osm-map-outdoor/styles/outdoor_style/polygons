@@ -66,8 +66,8 @@ natural=wood [0x15 resolution 18]
 natural=land [0x27 resolution 10]
 
 natural=sea [0x32 resolution 10]
-natural=water [0x3e resolution 18 continue]
-natural=water [0x3c resolution 22]
+natural=water { name '${name}' } [0x3e resolution 18 continue]
+natural=water { name '${name}' } [0x3c resolution 22]
 natural=beach [0x3d resolution 18]
 
 place=village | landuse=residential [0x03 resolution 18]
