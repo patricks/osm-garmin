@@ -6,9 +6,9 @@ highway=* & (impassable=yes | access=private)   { set access=no; }
 #------------------------------------------------------------------------------
 # contours take their name from the elevation setting
 
-contour=elevation & contour_ext=elevation_minor     { name '${ele|conv:m=>ft}'; }  [0x20 resolution 22]
-contour=elevation & contour_ext=elevation_medium    { name '${ele|conv:m=>ft}'; }  [0x21 resolution 20]
-contour=elevation & contour_ext=elevation_major     { name '${ele|conv:m=>ft}'; }  [0x22 resolution 18]
+contour=elevation & contour_ext=elevation_minor     { name '${ele}' }  [0x20 resolution 22]
+contour=elevation & contour_ext=elevation_medium    { name '${ele}' }  [0x21 resolution 20]
+contour=elevation & contour_ext=elevation_major     { name '${ele}' }  [0x22 resolution 18]
 
 #------------------------------------------------------------------------------
 # flag unpaved roads
@@ -170,10 +170,10 @@ natural=coastline   [0x15 resolution 12]
 natural=cliff       [0x31 resolution 22]
 
 # waterway
-waterway=canal      [0x1f resolution 21]
-waterway=drain      [0x1f resolution 22]
-waterway=river      [0x1f resolution 18]
-waterway=stream     [0x18 resolution 22]
+waterway=canal  { name '${name}' } [0x1f resolution 21]
+waterway=drain  { name '${name}' } [0x1f resolution 22]
+waterway=river  { name '${name}' } [0x1f resolution 18]
+waterway=stream { name '${name}' } [0x18 resolution 22]
 
 ## LOCATOR START ##
 
