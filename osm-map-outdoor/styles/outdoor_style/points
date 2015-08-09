@@ -275,12 +275,12 @@ amenity=grit_bin [0x6418 resolution 24]
 #------------------------------------------------------------------------------
 # Places
 
-place=city      [0x0400 resolution 14]
-place=town      [0x0800 resolution 17]
-place=village   [0x0a00 resolution 20]
-place=suburb    [0x0b00 resolution 21]
-place=hamlet    [0x0d00 resolution 21]
-place=island    [0x650c resolution 20]
+place=city { name '${name}' } [0x0400 resolution 14]
+place=town { name '${name}' } [0x0800 resolution 17]
+place=village { name '${name}' } [0x0a00 resolution 20]
+place=suburb { name '${name}' } [0x0b00 resolution 21]
+place=hamlet { name '${name}' } [0x0d00 resolution 21]
+place=island { name '${name}' } [0x650c resolution 20]
 
 place=locality  [0x2800 resolution 22]
 
