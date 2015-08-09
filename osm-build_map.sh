@@ -206,7 +206,7 @@ usage: $0 options
 OPTIONS:
 	-c <country>	Define the country
 	-d		Download osm data
-  -f <format>	Select the input format (osm|osm.pbf)
+	-f <format>	Select the input format (osm|osm.pbf)
 	-t <map type>	Select the map type
 	-u		Upload files to another server
 	-x		Cleanup build directories
@@ -248,9 +248,9 @@ do
 	d)
 		DLData="YES"
 		;;
-  f)
-  	INFORMAT=$OPTARG
-  	;;
+	f)
+		INFORMAT=$OPTARG
+		;;
 	t)
 		MAPTYPE=$OPTARG
 		;;
@@ -325,7 +325,7 @@ if [ "$DLData" = "YES" ]; then
 fi
 
 if [ ! -f "$OSMDATA" ]; then
-	echo "INFO: No OSM Data file ($OSMDATA)found staring download"
+	echo "INFO: No OSM Data file ($OSMDATA) found staring download"
 	update_osm_data $COUNTRY
 fi
 
