@@ -14,10 +14,10 @@
 #usage example:  ./osm-build_map.sh -d -c austria -t outdoor
 
 # current date
-CDATE=`date "+%G%m%d"`
+CDATE=`date "+%Y%m%d"`
 
 # strings for the config files
-PRETTYDATE=`date "+%d.%m.%G"`
+PRETTYDATE=`date "+%d.%m.%Y"`
 
 CWD=`pwd`
 
