@@ -11,6 +11,8 @@ area-name: PCOUNTRY
 mapname: 632PNUMBER345
 draw-priority: 10
 bounds: ../../osm-bounds/bounds
+precomp-sea: ../../osm-bounds/sea
+generate-sea
 location-autofill: bounds,is_in,nearest
 add-pois-to-areas
 remove-short-arcs

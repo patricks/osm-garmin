@@ -1,7 +1,7 @@
 #!/bin/sh
 ###############################################################################
 #                                                                             #
-# download the world bounds file from navmaps.eu                              #
+# download the world bounds and sea file                                      #
 #                                                                             #
 # @version: 1.00                                                              #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
@@ -11,10 +11,6 @@
 #                                                                             #
 ###############################################################################
 
-# download bounds from: http://navmaps.org/boundaries
-
-VERSION="20150206"
-
 CWD=`pwd`
 
 if [ ! -x /usr/bin/curl ]; then
@@ -22,13 +18,22 @@ if [ ! -x /usr/bin/curl ]; then
 	exit -1
 fi
 
+# bounds
 rm -rf bounds && mkdir bounds
 
 cd bounds/
 
-#curl -O http://www.navmaps.eu/wanmil/bounds_${VERSION}.zip
-curl -O http://osm2.pleiades.uni-wuppertal.de/bounds/${VERSION}/bounds_${VERSION}.zip
+curl -O http://osm2.pleiades.uni-wuppertal.de/bounds/latest/bounds.zip
 
-unzip bounds_${VERSION}.zip
+unzip bounds.zip
+
+# sea
+cd $CWD
+
+rm -rf sea && mkdir sea
+
+curl -O http://osm2.pleiades.uni-wuppertal.de/sea/latest/sea.zip
+
+unzip sea.zip
 
 cd $CWD
