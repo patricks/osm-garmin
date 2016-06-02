@@ -190,15 +190,15 @@ tourism=attraction [0x2c04 resolution 22]
 
 tourism=information [0x4c00 resolution 24]
 
-tourism=museum | historic=museum [0x2c02 resolution 24]
 tourism=picnic_site [0x4a00 resolution 24]
 tourism=theme_park [0x2c01 resolution 24]
 tourism=wine_cellar [0x2c0a resolution 24]
+tourism=museum | historic=museum { name '${name}' } [0x2c02 resolution 24]
 
-historic=castle [0x2c0d resolution 24]
-historic=ruins [0x2c0e resolution 24]
-historic=monument [0x2c0f resolution 24]
-historic=memorial [0x2c10 resolution 24]
+historic=castle { name '${name}' } [0x2c0d resolution 24]
+historic=ruins { name '${name}' } [0x2c0e resolution 24]
+historic=monument { name '${name}' } [0x2c0f resolution 24]
+historic=memorial { name '${name}' } [0x2c10 resolution 24]
 historic=archaeological_site [0x2c02 resolution 24]
 
 #------------------------------------------------------------------------------
