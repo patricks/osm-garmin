@@ -184,7 +184,7 @@ tourism=chalet { name '${name}' } [0x2b09 resolution 24]
 #------------------------------------------------------------------------------
 # Tourismus
 
-tourism=viewpoint [0x2c13 resolution 22]
+tourism=viewpoint { name '${name}' } [0x2c13 resolution 22]
 amenity=guidepost | amenity=signpost | (tourism=information & information=guidepost) [0x4c01 resolution 24]
 tourism=attraction [0x2c04 resolution 22]
 
