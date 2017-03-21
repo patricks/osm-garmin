@@ -32,6 +32,8 @@ cd $CWD
 
 rm -rf sea && mkdir sea
 
+cd sea/
+
 curl -O http://osm2.pleiades.uni-wuppertal.de/sea/latest/sea.zip
 
 unzip sea.zip
