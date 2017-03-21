@@ -3,7 +3,7 @@
 A simple shell script collection to build openstreetmap maps for garmin devices. The maps are optimized for outdoor usage.
 
 ## Prebuild Maps
-You can download prebuild maps via [osm-garmin-maps](https://github.com/patricks/osm-garmin-maps)
+You can download prebuild maps via [osm-garmin-maps](https://github.com/patricks/osm-garmin-maps).
 
 ## Installation
 
