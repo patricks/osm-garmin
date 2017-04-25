@@ -1,7 +1,7 @@
 #!/bin/sh
 ###############################################################################
 #                                                                             #
-# monthly build maps for different  countries                                 #
+# bulk build maps for different  countries                                    #
 #                                                                             #
 # @version: 1.0.0                                                             #
 # @author: Steiner Patrick <patrick@helmsdeep.at>                             #
