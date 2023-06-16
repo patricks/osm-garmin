@@ -23,7 +23,7 @@ rm -rf bounds && mkdir bounds
 
 cd bounds/
 
-curl -O http://osm2.pleiades.uni-wuppertal.de/bounds/latest/bounds.zip
+curl -O https://www.thkukuk.de/osm/data/bounds-latest.zip
 
 unzip bounds.zip
 
@@ -34,7 +34,7 @@ rm -rf sea && mkdir sea
 
 cd sea/
 
-curl -O http://osm2.pleiades.uni-wuppertal.de/sea/latest/sea.zip
+curl -O https://www.thkukuk.de/osm/data/sea-latest.zip
 
 unzip sea.zip
 
