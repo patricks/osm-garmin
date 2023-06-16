@@ -25,7 +25,7 @@ cd bounds/
 
 curl -O https://www.thkukuk.de/osm/data/bounds-latest.zip
 
-unzip bounds.zip
+unzip bounds-latest.zip
 
 # sea
 cd $CWD
@@ -36,6 +36,6 @@ cd sea/
 
 curl -O https://www.thkukuk.de/osm/data/sea-latest.zip
 
-unzip sea.zip
+unzip sea-latest.zip
 
 cd $CWD
